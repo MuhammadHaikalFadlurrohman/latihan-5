@@ -2,7 +2,6 @@ var angka = [1,2,3,4,5];
 angka.forEach(function(e){
     console.log(e);
 });
-
 angka.forEach(num => console.log(num*2));
 
 var angka2 = angka.map(function(e){
