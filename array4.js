@@ -12,7 +12,7 @@ const prompt = require('prompt-sync')();
 let mahasiswa =[
     {nama : 'budi', nilai : 85},
     {nama : 'siti', nilai : 90},
-    {nama : 'ani', nilai : 78},
+    {nama : 'ani', nilai  :  78},
     {nama : 'lina', nilai : 68}
 ];
 // data mahasiswa ditampilkan menggunakan forEach
@@ -33,12 +33,19 @@ urutNilai.forEach(mhs => console.log(`${mhs.nama} - Nilai : ${mhs.nilai}`));
 let cariNama = prompt('Masukkan nama mahasiswa yang dicari: ');
 let hasilCari = mahasiswa.find(mhs => mhs.nama.toLowerCase() === cariNama.toLowerCase());
 
+do { 
 if (hasilCari) {
     console.log(`Mahasiswa ditemukan: ${hasilCari.nama} - Nilai : ${hasilCari.nilai}`);
 } else {
     console.log('Mahasiswa tidak ditemukan.');
 }
 
+// tanyakan apakah ingin mencari lagi 
+let pilihan = prompt('/n Apakah Anda ingin mencari lagi? (y/n): '); toLowerCase();
+} while (pilihan !== 'y' && pilihan !== 'yes') {
+    hasilCari = false;
+    console.log('/n Terimakasi kasih ! Programan Selesai.');
+}
 
 
 
